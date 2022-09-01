@@ -35,6 +35,7 @@ Route::get('/', [ClientController::class, 'home']);
 Route::get('/shop', [ClientController::class, 'shop']);
 Route::get('/panier', [ClientController::class, 'panier']);
 Route::get('/paiement', [ClientController::class, 'paiement']);
+Route::get('/commande', [ClientController::class, 'commande']);
 Route::get('/login1', [ClientController::class, 'login']);
 Route::get('/signup', [ClientController::class, 'signup']);
 Route::get('/apropos', [ClientController::class, 'apropos']);

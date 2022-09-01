@@ -66,7 +66,7 @@
 
                     {{Form::label('', 'Nom de la catégorie', ['for' => 'exampleInputEmail1'])}}
 
-                    {{Form::text('category_name', $category->category_name, ['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Enter category'])}}
+                    {{Form::text('category_name', $category->category_name, ['class' => 'form-control', 'id' => 'exampleInputEmail1', 'placeholder' => 'Entrer une catégorie'])}}
                   </div>
                 </div>
                 <!-- /.card-body -->

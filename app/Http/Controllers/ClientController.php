@@ -106,6 +106,8 @@ class ClientController extends Controller
         return view('client.paiement');
     }
 
+
+
     public function payer(Request $request){
 
         $oldCart = Session::has('cart') ? Session::get('cart') : null;
@@ -117,7 +119,7 @@ class ClientController extends Controller
 
             $charge = Charge::create(array(
                 "amount" => $cart->totalPrice * 100,
-                "currency" => "usd",
+                "currency" => "eur",
                 "source" => $request->input('stripeToken'), // obtainded with Stripe.js
                 "description" => "Test Charge"
             ));
@@ -221,6 +223,22 @@ class ClientController extends Controller
             return $order;
         });
         return view('admin.orders')->with('orders', $orders);
-
     }
+
+    public function commande(){
+        if(!Session::has('client')){
+            return view('client.login');
+            }
+
+            if(!Session::has('cart')){
+                return view('client.panier');
+                }
+        $orders = Order::All();
+
+        $orders->transform(function($order, $key){
+            $order->panier =  unserialize($order->panier);
+
+            return $order;
+        });
+        return view('client.commande')->with('orders', $orders);    }
 }

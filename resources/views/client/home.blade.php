@@ -152,7 +152,7 @@
                                 <h3><a href="#">{{ $product->product_name }}</a></h3>
                                 <div class="d-flex">
                                     <div class="pricing">
-                                        <p class="price"><span>€{{ $product->product_price }}</span></p>
+                                        <p class="price"><span>{{ $product->product_price }}€</span></p>
                                     </div>
                                 </div>
                                 <div class="bottom-area d-flex px-3">

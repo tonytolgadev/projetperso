@@ -40,7 +40,7 @@
                 @foreach ($products as $product)
                     <div class="col-md-6 col-lg-3 ftco-animate">
                         <div class="product">
-                            <a href="#" class="img-prod"><img class="img-fluid"
+                            <a href="{{ url('ajouteraupanier/' . $product->id) }}" class="img-prod"><img class="img-fluid"
                                     src="{{ asset('storage/product_images/' . $product->product_image) }}" alt="#">
                                 <div class="overlay"></div>
                             </a>
@@ -48,7 +48,7 @@
                                 <h3><a href="#">{{ $product->product_name }}</a></h3>
                                 <div class="d-flex">
                                     <div class="pricing">
-                                        <p class="price"><span>€{{ $product->product_price }}</span></p>
+                                        <p class="price"><span>{{ $product->product_price }}€</span></p>
                                     </div>
                                 </div>
                                 <div class="bottom-area d-flex px-3">

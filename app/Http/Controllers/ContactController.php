@@ -8,12 +8,13 @@ use Mail;
 
 class ContactController extends Controller
 {
-    public function contact()
+    public function contact(Request $request)
     {
         return view('client.contact-us');
     }
 
-    public function sendEmail(Request $request){
+    public function sendEmail(Request $request)
+    {
         $details = [
             'name' => $request->name,
             'email' => $request->email,
